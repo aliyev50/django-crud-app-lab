@@ -134,7 +134,7 @@ html {
     border-color: var(--secondary);
   }
 
-  #book {
+  .logo {
     height: 60px;
   }
   

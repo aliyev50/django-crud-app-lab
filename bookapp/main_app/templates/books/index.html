@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/books/book-index.css' %}"/>
+{% endblock %} 
+{% block content %}
+
+<section class="page-header">
+  <h1>Book List</h1>
+</section>
+
+<section class="card-container">
+  {% for book in books %}
+    <div class="card">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img
+            src="https://shorturl.at/UWEZ1"
+            class="profile-pic"
+            alt="Power"
+          />
+        </div>
+        <h2 class="card-title">{{ book.name }}</h2>
+        {% if book.price > 0 %}
+        <p>Price: ${{ book.price }}</p>
+        {% else %}
+        <p>This book is currently free.</p>
+        {% endif %}
+        <p><small>{{ book.description }}</small></p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
