@@ -12,6 +12,7 @@
 <section class="card-container">
   {% for book in books %}
     <div class="card">
+      <a href="/books/{{ book.id }}">
       <div class="card-content">
         <div class="card-img-container">
           <img
@@ -28,6 +29,7 @@
         {% endif %}
         <p><small>{{ book.description }}</small></p>
       </div>
+     </a>
     </div>
   {% endfor %}
 </section>
