@@ -26,7 +26,10 @@
          <p>Price: ${{ book.price }}</p>
          <p><small>{{ book.description }}</small></p>
          <p>Quantity available: {{ book.quantity }}</p>
-         <button type="submit">Add to Cart</button>
+         <form action="/add-to-cart" class="d-inline">
+          <input type="hidden" name="book_id" value={{book.id}} />
+         <button type="submit"><a href="{% url 'add_to_cart' book.id %}">Add to Cart</a></button>
+         </form>
     </div>
       </div>
     </div>

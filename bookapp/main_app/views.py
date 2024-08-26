@@ -32,8 +32,7 @@ def view_cart(request):
  
 def add_to_cart(request, book_id):
     book = Book.objects.get(id=book_id)
-    cart_item, created = CartItem.objects.get_or_create(book=book, 
-                                                       user=request.user)
+    cart_item, created = CartItem.objects.get_or_create(book=book, user=request.user)
     cart_item.quantity += 1
     cart_item.save()
     return redirect('view_cart')
