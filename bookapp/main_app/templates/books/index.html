@@ -16,20 +16,19 @@
       <div class="card-content">
         <div class="card-img-container">
           <img
-            src="https://shorturl.at/UWEZ1"
+            src= {{ book.image }}
             class="profile-pic"
             alt="Power"
           />
         </div>
+      </a>
         <h2 class="card-title">{{ book.name }}</h2>
-        {% if book.price > 0 %}
-        <p>Price: ${{ book.price }}</p>
-        {% else %}
-        <p>This book is currently free.</p>
-        {% endif %}
-        <p><small>{{ book.description }}</small></p>
+         <p>Price: ${{ book.price }}</p>
+         <p><small>{{ book.description }}</small></p>
+         <p>Quantity available: {{ book.quantity }}</p>
+         <button type="submit">Add to Cart</button>
+    </div>
       </div>
-     </a>
     </div>
   {% endfor %}
 </section>

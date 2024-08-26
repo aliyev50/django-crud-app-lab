@@ -6,7 +6,10 @@
 {% block content %}
 <section class="cat-container">
   <div class="cat-img">
-    <img src="{% static 'images/sk8r-boi-cat.svg' %}" alt="A skater boy cat" />
+    <img
+    src= {{ book.image }}
+    class="profile-pic"
+    alt="Power"
   </div>
   <div class="cat-details">
     <h1>{{ book.name }}</h1>
@@ -16,6 +19,11 @@
         <p>This book is currently free.</p>
     {% endif %}
         <p><small>{{ book.description }}</small></p>
+
+        <div class="cat-actions">
+          <a href="{% url 'book-update' book.id %}" class="btn warn">Edit</a>
+          <a href="{% url 'book-delete' book.id %}" class="btn danger">Delete</a>
+        </div>
   </div>
 </section>
 {% endblock %}
